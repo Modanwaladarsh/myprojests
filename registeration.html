@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registeration</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: crimson;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px
+            ;
+            height: 100vh;
+            padding: auto;
+        }
+        .container{
+            background-color: rgb(146, 191, 229);
+            padding: 20px;
+             border-radius: 10px;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+             }
+             h1{
+               text-align: center; 
+               text-shadow: 10px;
+               margin-bottom: 10px;
+               color: rgb(8, 99, 8);
+
+             }
+             form {
+              display: flex;
+              flex-direction: column;
+              }
+              label{
+                margin-bottom: 10px;
+                color: rgb(82, 80, 80);
+              }
+              input, select, button{
+                margin-bottom: 12px;
+                padding: 8px;
+                font-size: 12px;
+                border-radius: 5px;
+                border: 2px,solid navajowhite;
+                width: 100%;
+              }
+              button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gold;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>REGISTERATION FORM</h1>
+        <form id="REGISTERATION form">
+            <label for="name">full name:</label>
+            <input type="text" id="name" name="name" required placeholder="enter your name">
+            <br><label for="email">email id:</label>
+            <input type="text" id="email" name="email" required placeholder="enter your email">
+            <br><label for="password">password:</label><b></b>
+            <input type="text" id="password" name="password" required placeholder="enter your password">
+            <br><label for="confirm password">confirm password:</label>
+            <input type="text" id="confirm password" name="confirm password" required placeholder="confirm password">
+            <br><label for="gender">gender:</label>
+            <!-- <input type="text" > -->
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="trans">trans</option>
+                <option value="others">others</option>
+            </select>
+            <br>
+            <label>
+                <input type="checkbox" id="terms" names="terms">
+                i agree to terms and condition</label>
+                <button>submit</button>
+                </form>
+                <div id="success Message" style="display: none;">registeration successful!</div>
+
+  </div>
+
+</body>
+</html>
