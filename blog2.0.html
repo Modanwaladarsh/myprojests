@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARANASI BLOG</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varanasi Blog</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->/
+     <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff7e5f;
+}
+
+#facts ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#add-fact input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#add-fact button {
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#add-fact button:hover {
+    background-color: #feb47b;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+     </style>
+</head>
+<body>
+    <script>
+        // Script to manage dynamic behavior on the blog
+
+document.addEventListener("DOMContentLoaded", () => {
+    const factsList = document.getElementById("facts-list");
+    const factForm = document.getElementById("fact-form");
+    const factInput = document.getElementById("fact-input");
+
+    // Initial facts about Varanasi
+    const facts = [
+        "Varanasi is over 3,000 years old and is one of the oldest continuously inhabited cities in the world.",
+        "The city has over 80 ghats along the River Ganga, each with its unique history.",
+        "The Kashi Vishwanath Temple is one of the twelve Jyotirlingas of Lord Shiva.",
+        "Varanasi is a hub for silk weaving and Banarasi sarees are famous worldwide.",
+    ];
+
+    // Function to display facts
+    function displayFacts() {
+        factsList.innerHTML = "";
+        facts.forEach((fact, index) => {
+            const li = document.createElement("li");
+            li.textContent = fact;
+
+            // Add delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.style.marginLeft = "10px";
+            deleteBtn.style.color = "red";
+            deleteBtn.style.cursor = "pointer";
+
+            // Delete functionality
+            deleteBtn.addEventListener("click", () => {
+                facts.splice(index, 1);
+                displayFacts();
+            });
+
+            li.appendChild(deleteBtn);
+            factsList.appendChild(li);
+        });
+    }
+
+    // Add new fact
+    factForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const newFact = factInput.value.trim();
+        if (newFact) {
+            facts.push(newFact);
+            factInput.value = "";
+            displayFacts();
+        }
+    });
+
+    // Initial render of facts
+    displayFacts();
+});
+
+    </script>
+    <header>
+        <h1>Explore Varanasi</h1>
+        <p>The Spiritual Capital of India</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>About Varanasi</h2>
+            <p>
+                Varanasi, also known as Banaras or Kashi, is one of the oldest cities in the world. Located on the banks of the River Ganga, it is renowned for its ghats, temples, and vibrant culture.
+            </p>
+        </section>
+
+        <section id="facts">
+            <h2>Interesting Facts</h2>
+            <ul id="facts-list">
+                <!-- Facts will be dynamically added here -->
+            </ul>
+        </section>
+
+        <section id="add-fact">
+            <h2>Share Your Fact</h2>
+            <form id="fact-form">
+                <input type="text" id="fact-input" placeholder="Share a new fact about Varanasi" required>
+                <button type="submit">Add Fact</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Varanasi Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</head>
+<body>
+    
+</body>
+</html>
